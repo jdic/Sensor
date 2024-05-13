@@ -28,7 +28,11 @@ export default
         },
         dark:
         {
-
+          background: '#031927',
+          primary: '#001D3D',
+          secondary: '#FFD60A',
+          text: '#F8EDEB',
+          accent: '#4D6CFA'
         },
       }
     },
