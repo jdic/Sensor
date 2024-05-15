@@ -1,4 +1,4 @@
-export enum Temperature
+export enum Unit
 {
   Celcius = 'Celcius',
   Fahrenheit = 'Fahrenheit'
@@ -6,8 +6,8 @@ export enum Temperature
 
 export interface ISettings
 {
-  temperature: Temperature
-  setTemperature: (temperature: Temperature) => void
+  unit: Unit
+  setUnit: (unit: Unit) => void
   interval: string
   setInterval: (interval: string) => void
   ip: string
