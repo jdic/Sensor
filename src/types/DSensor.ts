@@ -1,9 +1,9 @@
-export type TemperatureUnit = '°C' | '°F' | '°K'
+import { ShortUnit } from './DSettings'
 
 export interface ISensor
 {
   id: string
-  unit: TemperatureUnit
+  unit: ShortUnit
   description: string
   api?: string
 }

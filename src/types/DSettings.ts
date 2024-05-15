@@ -1,7 +1,15 @@
 export enum Unit
 {
   Celcius = 'Celcius',
-  Fahrenheit = 'Fahrenheit'
+  Fahrenheit = 'Fahrenheit',
+  Kelvin = 'Kelvin'
+}
+
+export enum ShortUnit
+{
+  Celcius = '°C',
+  Fahrenheit = '°F',
+  Kelvin = '°K'
 }
 
 export interface ISettings

@@ -8,7 +8,7 @@ const persistentObject = persist<ISettings>((set) =>
     interval: '1000',
     setInterval: (interval: string) => set(() => ({ interval })),
     unit: 'Fahrenheit' as Unit,
-    setUnit: (unit) => set(() => ({ unit })),
+    setUnit: (unit: Unit) => set(() => ({ unit })),
     ip: '',
     setIp: (ip: string) => set(() => ({ ip })),
   }
