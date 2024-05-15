@@ -5,8 +5,8 @@ import { create } from 'zustand'
 const persistentObject = persist<ISettings>((set) =>
 (
   {
-    interval: 1000,
-    setInterval: (interval: number) => set(() => ({ interval: interval })),
+    interval: '1000',
+    setInterval: (interval: string) => set(() => ({ interval })),
     temperature: 'Fahrenheit' as Temperature,
     setTemperature: (temperature) => set(() => ({ temperature })),
     ip: '',

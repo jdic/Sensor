@@ -8,8 +8,8 @@ export interface ISettings
 {
   temperature: Temperature
   setTemperature: (temperature: Temperature) => void
-  interval: number
-  setInterval: (interval: number) => void
+  interval: string
+  setInterval: (interval: string) => void
   ip: string
   setIp: (ip: string) => void
 }
