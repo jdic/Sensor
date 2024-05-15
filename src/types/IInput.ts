@@ -11,6 +11,7 @@ export interface IInput extends IGeneric
   onChange?: (text: string) => void
   showWarn?: boolean
   warnText?: string
+  initialWarnState?: boolean
   validator?: (value: string) => boolean
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
 }

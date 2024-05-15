@@ -3,17 +3,24 @@ import { IInput } from '../../../types/IInput'
 import React, { useState } from 'react'
 import clsx from 'clsx'
 
-export const Input: React.FC<IInput> = ({ title, description, validator, children, type, onKeyPress, className, placeholder, onChange, showWarn, warnText, required }) =>
+export const Input: React.FC<IInput> = ({ title, description, initialWarnState, validator, children, type, onKeyPress, className, placeholder, onChange, showWarn, warnText, required }) =>
 {
-  const [showWarning, setShowWaring] = useState(false)
+  const [showWarning, setShowWarning] = useState(initialWarnState)
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) =>
   {
-    if (validator)
-      setShowWaring(!validator(event.target.value))
+    const { value } = event.target
 
-    if (onChange && !showWarning)
-      onChange(event.target.value)
+    if (validator)
+      setShowWarning(!validator(value))
+
+    if (onChange)
+      setShowWarning((prev) =>
+      {
+        onChange(value)
+
+        return prev
+      })
   }
 
   return (
@@ -34,7 +41,7 @@ export const Input: React.FC<IInput> = ({ title, description, validator, childre
       />
       {(showWarning || showWarn) && warnText &&
         (
-          <p className='text-global-warning'>{warnText}</p>
+          <p className='text-global-warning text-xs mt-1'>{warnText}</p>
         )
       }
       {children}
