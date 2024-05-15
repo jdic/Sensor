@@ -1,7 +1,7 @@
 import { Description, Disclosure, DisclosurePanel, Field, Fieldset, Label, Transition, TransitionChild } from '@headlessui/react'
 import { XCircleIcon } from '@heroicons/react/16/solid'
 import { Fragment } from 'react/jsx-runtime'
-import { IModal } from '../../types/IModal'
+import { IModal } from '../../../types/IModal'
 
 export const Modal: React.FC<IModal> = ({ open, title, disableCloseButton, onClose, className, description, children }) =>
 {
