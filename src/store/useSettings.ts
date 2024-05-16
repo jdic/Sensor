@@ -6,12 +6,12 @@ const persistentObject = persist<ISettings>((set) =>
 (
   {
     interval: '1000',
-    setInterval: (interval: string) => set(() => ({ interval })),
-    unit: 'Fahrenheit' as Unit,
-    setUnit: (unit: Unit) => set(() => ({ unit })),
-    ip: '',
-    setIp: (ip: string) => set(() => ({ ip })),
+    ip: '0.0.0.0',
+    unit: Unit.Fahrenheit,
+    setInterval: (interval) => set({ interval }),
+    setIp: (ip) => set({ ip }),
+    setUnit: (unit) => set({ unit })
   }
 ), { name: 'settings-storage' })
 
-export const useSettingsStore = create(persistentObject)
+export const useSettings = create(persistentObject)
