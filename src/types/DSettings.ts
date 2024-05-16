@@ -14,7 +14,7 @@ export enum ShortUnit
 
 export interface ISettings
 {
-  unit: Unit
+  unit: ShortUnit
   setUnit: (unit: Unit) => void
   interval: string
   setInterval: (interval: string) => void
