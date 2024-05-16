@@ -8,18 +8,17 @@ const persistentObject = persist<ISensorsStore>((set, get) =>
     sensors: [],
     addSensor: (sensor: ISensor) =>
     {
-      if (get().findSensorById(sensor.id))
-        return { alreadyExists: true }
+      if (get().getSensor(sensor.id))
+        return false
 
       else
       {
         set((state) => ({ sensors: [...state.sensors, sensor] }))
-        return { sensor }
+        return true
       }
     },
     removeSensor: (id: string) => set(() => ({ sensors: get().sensors.filter((sensor) => sensor.id !== id) })),
     getSensor: (id: string) => get().sensors.find((sensor) => sensor.id === id),
-    findSensorById: (id: string) => get().sensors.find((sensor) => sensor.id === id)
   }
 ), { name: 'sensors-storage' })
 

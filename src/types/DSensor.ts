@@ -8,17 +8,11 @@ export interface ISensor
   api?: string
 }
 
-export interface ISensorStoreAddSensor
-{
-  alreadyExists?: boolean
-  sensor?: ISensor
-}
 
 export interface ISensorsStore
 {
   sensors: ISensor[]
-  addSensor: (sensor: ISensor) => ISensorStoreAddSensor
+  addSensor: (sensor: ISensor) => boolean
   removeSensor: (id: string) => void
   getSensor: (id: string) => ISensor | undefined
-  findSensorById: (id: string) => ISensor | undefined
 }
