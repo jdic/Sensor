@@ -1,8 +1,17 @@
+import { Sensor } from './components/Sensor/Sensor'
+import { Header } from './layouts/Header/Header'
+import { useSensor } from './store/useSensor'
+
 export const App = () =>
 {
+  const { sensors } = useSensor()
+
   return (
     <>
-      <h1 className='text-6xl'>HOME</h1>
+      <Header />
+      <div className='flex flex-wrap'>
+        {sensors.map((sensor) => <Sensor key={sensor.id} {...sensor} />)}
+      </div>
     </>
   )
 }
