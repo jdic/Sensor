@@ -13,4 +13,3 @@ export interface IThemeStore
   setTheme: (theme: Theme) => void
   nextTheme: () => void
 }
-

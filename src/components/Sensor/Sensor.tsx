@@ -1,16 +1,11 @@
 import { Field, Label, Description, Button, Fieldset } from '@headlessui/react'
 import { TrashIcon, PencilIcon } from '@heroicons/react/16/solid'
 import { ISensor } from '../../types/DSensor'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export const Sensor: React.FC<ISensor> = ({ description, id, unit, api }) =>
 {
   const [temperature, setTemperature] = useState<number>(0)
-
-  useEffect(() =>
-  {
-    setTemperature(5)
-  }, [])
 
   return (
     <div className='w-1/2 md:w-1/4 lg:w-1/6 px-2 py-2'>
