@@ -8,7 +8,6 @@ export interface ISensor
   api?: string
 }
 
-
 export interface ISensorsStore
 {
   sensors: ISensor[]
