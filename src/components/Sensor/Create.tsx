@@ -13,7 +13,7 @@ import clsx from 'clsx'
 export const Create = () =>
 {
   const [data, setData] = useState<ISensor>({ id: '', description: '', unit: ShortUnit.Fahrenheit, api: '' })
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   const [showWarn, setShowWarn] = useState(false)
   const { addSensor, getSensor } = useSensor()
 
@@ -45,10 +45,9 @@ export const Create = () =>
           <Input
             type='number'
             title='ID'
-            onChange={handleChange}
+            onChange={(value) => { handleChange(value); handleSensor('id', value) }}
             showWarn={showWarn}
             warnText='ID already exists.'
-            
           />
         </div>
         <div className='mt-2'>
