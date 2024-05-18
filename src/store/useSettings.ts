@@ -1,4 +1,4 @@
-import { ISettings, Unit } from '../types/DSettings'
+import { ISettings, ShortUnit } from '../types/DSettings'
 import { persist } from 'zustand/middleware'
 import { create } from 'zustand'
 
@@ -7,10 +7,12 @@ const persistentObject = persist<ISettings>((set) =>
   {
     interval: '1000',
     ip: '0.0.0.0',
-    unit: Unit.Fahrenheit,
+    unit: ShortUnit.Fahrenheit,
+    speed: '1000',
+    setSpeed: (speed) => set({ speed }),
     setInterval: (interval) => set({ interval }),
     setIp: (ip) => set({ ip }),
-    setUnit: (unit) => set({ unit })
+    setUnit: (unit) => set({ unit }),
   }
 ), { name: 'settings-storage' })
 
