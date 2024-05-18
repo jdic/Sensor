@@ -35,7 +35,7 @@ export const Create = () =>
 
   return (
     <>
-      <div className='fixed flex items-center justify-center rounded-md right-5 bottom-5 w-7 h-7 dark:bg-dark-secondary'>
+      <div className='flex items-center justify-center rounded-md w-7 h-7 dark:bg-dark-secondary'>
         <Button className='size-5 dark:text-black' onClick={handleModal}>
           <PlusCircleIcon />
         </Button>
