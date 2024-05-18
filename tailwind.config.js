@@ -11,6 +11,10 @@ export default
   {
     extend:
     {
+      animation:
+      {
+        'spin-slow': 'spin 10s linear infinite',
+      },
       fontFamily:
       {
         Montserrat: ['Montserrat', 'sans-serif'],
