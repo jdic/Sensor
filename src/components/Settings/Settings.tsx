@@ -41,7 +41,7 @@ export const Settings = () =>
           <Select title='Temperature Unit' options={Object.keys(Unit)} onChange={(event) => setUnit(event.target.value as ShortUnit)} defaultValue={unit} />
         </Field>
         <Field className='mt-2'>
-          <Input title='Speed RPM' placeholder={speed} onChange={setSpeed} />
+          <Input title='Speed RPM' type='number' placeholder={speed} onChange={setSpeed} />
         </Field>
         <Field className='mt-2'>
           <Input title='Engine Route' placeholder={engineRoute} onChange={setEngineRoute} />
