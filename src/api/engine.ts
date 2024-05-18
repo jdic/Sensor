@@ -1,10 +1,9 @@
-import { ILocalStorageFetch } from '../types/ILocalStorage'
 import { getFromLocalStorage } from '../utils/localStorage'
 import { POST } from './post'
 
 const getEngineURL = (addition: string) =>
 {
-  const engineRoute = getFromLocalStorage('engineRoute', 'fetch-storage') as ILocalStorageFetch
+  const engineRoute = getFromLocalStorage('engineRoute', 'fetch-storage')
   const ip = getFromLocalStorage('ip', 'settings-storage')
 
   return new URL(`${engineRoute}${addition}`, `http://${ip}`).toString()
