@@ -21,6 +21,8 @@ export const Settings = () =>
   useEffect(() =>
   {
     speedEngine()
+
+    return () => {}
   }, [speed])
 
   return (

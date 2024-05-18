@@ -7,12 +7,12 @@ const persistentObject = persist<IFetchStore>((set) =>
   {
     engineRoute: '/engine',
     sensorRoute: '/sensor',
-    engineOffRoute: '/engine/off',
-    engineOnRoute: '/engine/on',
-    engineSpeedRoute: '/engine/speed', 
-    setEngineRoute: (route: string) => {
+    engineOffRoute: '/off',
+    engineOnRoute: '/on',
+    engineSpeedRoute: '/speed?speed=', 
+    setEngineRoute: (route: string) =>
+    {
       set({ engineRoute: route })
-      set({ engineOffRoute: `${route}/off`, engineOnRoute: `${route}/on`, engineSpeedRoute: `${route}/speed` })
     },
     setSensorRoute: (route: string) => set({ sensorRoute: route }),
     setEngineOffRoute: (route: string) => set({ engineOffRoute: route }),

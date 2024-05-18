@@ -1,22 +1,22 @@
-import { useFetch } from '../store/useFetch'
-import { useSettings } from '../store/useSettings'
+import { ILocalStorageFetch } from '../types/ILocalStorage'
+import { getFromLocalStorage } from '../utils/localStorage'
 import { POST } from './post'
 
 const getEngineURL = (addition: string) =>
 {
-  const { engineRoute } = useFetch()
-  const { ip } = useSettings()
+  const engineRoute = getFromLocalStorage('engineRoute', 'fetch-storage') as ILocalStorageFetch
+  const ip = getFromLocalStorage('ip', 'settings-storage')
 
   return new URL(`${engineRoute}${addition}`, `http://${ip}`).toString()
 }
 
 export const startEngine = async () =>
 {
-  const { engineOnRoute } = useFetch()
+  const engineOnRoute = getFromLocalStorage('engineOnRoute', 'fetch-storage')
 
   try
   {
-    await POST(getEngineURL(engineOnRoute || '/start'))
+    await POST(getEngineURL(engineOnRoute || '/on'))
   }
 
   catch (error) { console.error(error) }
@@ -24,11 +24,11 @@ export const startEngine = async () =>
 
 export const stopEngine = async () =>
 {
-  const { engineOffRoute } = useFetch()
+  const engineOffRoute = getFromLocalStorage('engineOffRoute', 'fetch-storage')
 
   try
   {
-    await POST(getEngineURL(engineOffRoute || '/stop'))
+    await POST(getEngineURL(engineOffRoute || '/off'))
   }
 
   catch (error) { console.error(error) }
@@ -36,12 +36,12 @@ export const stopEngine = async () =>
 
 export const speedEngine = async () =>
 {
-  const { engineOffRoute } = useFetch()
-  const { speed } = useSettings()
+  const engineSpeedRoute = getFromLocalStorage('engineSpeedRoute', 'fetch-storage')
+  const speed = getFromLocalStorage('speed', 'settings-storage')
 
   try
   {
-    await POST(getEngineURL(engineOffRoute || `/speed?speed=${speed}`))
+    await POST(getEngineURL(engineSpeedRoute + speed || `/speed?speed=${speed}`))
   }
 
   catch (error) { console.error(error) }
