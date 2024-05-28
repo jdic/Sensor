@@ -1,2 +1,9 @@
+import axios from 'axios'
+
 export const POST = async (url: string) =>
-  await fetch(url, { method: 'POST' })
+{
+  const response = await (await axios.post(url)).data
+  console.log(response)
+ 
+  return response
+}

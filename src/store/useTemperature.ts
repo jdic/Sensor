@@ -2,12 +2,22 @@ import { ITemperatureStore } from '../types/DTemperature'
 import { useSettings } from './useSettings'
 import { useSensor } from './useSensor'
 import { create } from 'zustand'
+import { getFromLocalStorage } from '../utils/localStorage'
+import axios from 'axios'
 
-const fetchTemperature = async (id: string, ip: string): Promise<string> =>
+const getTempertureURL = (addition: string) =>
 {
-  const response = await fetch(`http://${ip}/read/temperature/${id}`)
-  const data = await response.json()
-  return data.temperature
+  const sensorRoute = getFromLocalStorage('sensorRoute', 'fetch-storage')
+  const ip = getFromLocalStorage('ip', 'settings-storage')
+
+  return new URL(`${sensorRoute}${addition}`, `http://${ip}`).toString()
+}
+
+const fetchTemperature = async (id: string): Promise<string> =>
+{
+  const response = await (await axios.get(getTempertureURL(id))).data
+  console.log(response)
+  return response
 }
 
 export const useTemperature = create<ITemperatureStore>((set, get) =>
@@ -17,10 +27,9 @@ export const useTemperature = create<ITemperatureStore>((set, get) =>
     intervalId: undefined,
     fetchTemperature: async (id: string) =>
     {
-      const { ip } = useSettings.getState()
       try
       {
-        const temperature = await fetchTemperature(id, ip)
+        const temperature = await fetchTemperature(id)
 
         set((state) => ({ temperatures: { ...state.temperatures, [id]: temperature } }))
       } catch (error) { console.error(error) }

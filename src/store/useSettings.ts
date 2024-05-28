@@ -1,6 +1,7 @@
 import { ISettings, ShortUnit } from '../types/DSettings'
 import { persist } from 'zustand/middleware'
 import { create } from 'zustand'
+import { speedEngine } from '../api/engine'
 
 const persistentObject = persist<ISettings>((set) =>
 (
@@ -9,7 +10,12 @@ const persistentObject = persist<ISettings>((set) =>
     ip: '0.0.0.0',
     unit: ShortUnit.Fahrenheit,
     speed: '1000',
-    setSpeed: (speed) => set({ speed }),
+    setSpeed: (speed) =>
+    {
+      set({ speed })
+
+      speedEngine()
+    },
     setInterval: (interval) => set({ interval }),
     setIp: (ip) => set({ ip }),
     setUnit: (unit) => set({ unit }),

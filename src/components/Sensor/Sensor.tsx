@@ -34,9 +34,3 @@ export const Sensor: React.FC<ISensor> = ({ description, id, unit, api }) =>
     </div>
   )
 }
-
-/*
-            <Button className='size-5 p-[1px] rounded-md dark:bg-dark-accent' aria-description='Edit Sensor'>
-              <PencilIcon />
-            </Button>
- */

@@ -6,7 +6,7 @@ const persistentObject = persist<IFetchStore>((set) =>
 (
   {
     engineRoute: '/engine',
-    sensorRoute: '/sensor',
+    sensorRoute: '/sensor?pin=',
     engineOffRoute: '/off',
     engineOnRoute: '/on',
     engineSpeedRoute: '/speed?speed=', 
