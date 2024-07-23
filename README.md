@@ -9,7 +9,6 @@ In this project of C2 P2 of mechatronics engineering, we did some thermodynamics
 ### Built with
 
 [![TypeScript](https://skillicons.dev/icons?i=ts)](https://www.typescriptlang.org/)
-[![Bun](https://skillicons.dev/icons?i=bun)](https://bun.sh)
 [![React](https://skillicons.dev/icons?i=react)](https://react.dev/)
 [![TailwindCSS](https://skillicons.dev/icons?i=tailwind)](https://tailwindcss.com/)
 
