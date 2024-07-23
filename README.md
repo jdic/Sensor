@@ -1,30 +1,16 @@
-# React + TypeScript + Vite
+# Sensor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this project of C2 P2 of mechatronics engineering, we did some thermodynamics tests, for this we needed to measure the internal temperature of the thermal system, this tool was developed in order to comfortably monitor temperature sensors.
 
-Currently, two official plugins are available:
+### App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![App View](https://github.com/user-attachments/assets/1a4aa481-573d-4df0-8ab1-37d7006fe74f)
 
-## Expanding the ESLint configuration
+### Built with
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+[![TypeScript](https://skillicons.dev/icons?i=ts)](https://www.typescriptlang.org/)
+[![Bun](https://skillicons.dev/icons?i=bun)](https://bun.sh)
+[![React](https://skillicons.dev/icons?i=react)](https://react.dev/)
+[![TailwindCSS](https://skillicons.dev/icons?i=tailwind)](https://tailwindcss.com/)
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+> Icons: [https://skillicons.dev/](https://skillicons.dev/)
