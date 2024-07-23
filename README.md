@@ -10,6 +10,7 @@ In this project of C2 P2 of mechatronics engineering, we did some thermodynamics
 
 [![TypeScript](https://skillicons.dev/icons?i=ts)](https://www.typescriptlang.org/)
 [![React](https://skillicons.dev/icons?i=react)](https://react.dev/)
+[![React](https://skillicons.dev/icons?i=vite)](https://vitejs.dev/)
 [![TailwindCSS](https://skillicons.dev/icons?i=tailwind)](https://tailwindcss.com/)
 
 > Icons: [https://skillicons.dev/](https://skillicons.dev/)
